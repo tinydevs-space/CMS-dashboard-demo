@@ -1,5 +1,4 @@
 import { CONFIG } from '../config-global';
-
 import { UserView } from '../sections/user/view';
 
 // ----------------------------------------------------------------------

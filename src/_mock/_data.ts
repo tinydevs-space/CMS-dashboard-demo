@@ -16,7 +16,7 @@ import {
 export const _myAccount = {
   displayName: 'Alex Sterling',
   email: 'alex.sterling@cmsdash.com',
-  photoURL: '/assets/images/avatar/avatar-25.webp',
+  photoURL: `${import.meta.env.BASE_URL}assets/images/avatar/avatar-25.webp`,
 };
 
 // ----------------------------------------------------------------------
@@ -26,7 +26,7 @@ export const _users = [...Array(30)].map((_, index) => ({
   name: _fullName(index),
   company: _company(index),
   isVerified: _boolean(index) || index % 3 === 0, // More verified users
-  avatarUrl: `/assets/images/avatar/avatar-${index + 1}.webp`,
+  avatarUrl: `${import.meta.env.BASE_URL}assets/images/avatar/avatar-${index + 1}.webp`,
   status: index % 5 ? 'active' : 'banned', // Slightly fewer banned users
   role:
     [
@@ -52,7 +52,7 @@ export const _posts = [...Array(23)].map((_, index) => ({
   id: _id(index),
   title: _postTitles(index),
   description: `Q3 Success: ${_description(index).slice(0, 50)}... boosted engagement!`, // Shortened with success note
-  coverUrl: `/assets/images/cover/cover-${index + 1}.webp`,
+  coverUrl: `${import.meta.env.BASE_URL}assets/images/cover/cover-${index + 1}.webp`,
   totalViews: 15000 + index * 1000, // Higher views
   totalComments: 12000 + index * 500, // Higher comments
   totalShares: 10000 + index * 400, // Higher shares
@@ -60,7 +60,7 @@ export const _posts = [...Array(23)].map((_, index) => ({
   postedAt: _times(index),
   author: {
     name: _fullName(index),
-    avatarUrl: `/assets/images/avatar/avatar-${index + 1}.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}assets/images/avatar/avatar-${index + 1}.webp`,
   },
 }));
 
@@ -82,7 +82,7 @@ export const _products = [...Array(24)].map((_, index) => {
     price: _price(index) * 1.2, // 20% price increase for better quarter
     name: _productNames(index),
     priceSale: setIndex % 2 ? null : _price(index) * 0.85, // More frequent sales
-    coverUrl: `/assets/images/product/product-${setIndex}.webp`,
+    coverUrl: `${import.meta.env.BASE_URL}assets/images/product/product-${setIndex}.webp`,
     colors:
       (setIndex === 1 && COLORS.slice(0, 2)) ||
       (setIndex === 2 && COLORS.slice(1, 3)) ||
@@ -105,22 +105,22 @@ export const _langs = [
   {
     value: 'en',
     label: 'English',
-    icon: '/assets/icons/flags/ic-flag-en.svg',
+    icon: `${import.meta.env.BASE_URL}assets/icons/flags/ic-flag-en.svg`,
   },
   {
     value: 'de',
     label: 'German',
-    icon: '/assets/icons/flags/ic-flag-de.svg',
+    icon: `${import.meta.env.BASE_URL}assets/icons/flags/ic-flag-de.svg`,
   },
   {
     value: 'fr',
     label: 'French',
-    icon: '/assets/icons/flags/ic-flag-fr.svg',
+    icon: `${import.meta.env.BASE_URL}assets/icons/flags/ic-flag-fr.svg`,
   },
   {
     value: 'es',
     label: 'Spanish',
-    icon: '/assets/icons/flags/ic-flag-es.svg', // Added for global expansion
+    icon: `${import.meta.env.BASE_URL}assets/icons/flags/ic-flag-es.svg`, // Added for global expansion
   },
 ];
 
@@ -155,7 +155,7 @@ export const _traffic = [
   {
     value: 'linkedin',
     label: 'Linkedin',
-    total: 4152, 
+    total: 4152,
   },
   {
     value: 'twitter',
@@ -187,7 +187,7 @@ export const _notifications = [
     id: _id(2),
     title: _fullName(2),
     description: 'Commented on Q3 analytics report',
-    avatarUrl: '/assets/images/avatar/avatar-2.webp',
+    avatarUrl: `${import.meta.env.BASE_URL}assets/images/avatar/avatar-2.webp`,
     type: 'friend-interactive',
     postedAt: _times(2),
     isUnRead: true,

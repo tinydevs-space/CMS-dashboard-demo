@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import type { CartItem, Product } from '../types/product';
 import { STORAGE_KEYS } from '../utils/storage';
+
+import type { Product, CartItem } from '../types/product';
 
 // ----------------------------------------------------------------------
 
@@ -76,16 +77,12 @@ export const useCartStore = create<CartStore>()(
                 set({ items: [] });
             },
 
-            getTotalItems: () => {
-                return get().items.reduce((total, item) => total + item.quantity, 0);
-            },
+            getTotalItems: () => get().items.reduce((total, item) => total + item.quantity, 0),
 
-            getSubtotal: () => {
-                return get().items.reduce((total, item) => {
+            getSubtotal: () => get().items.reduce((total, item) => {
                     const price = item.product.salePrice || item.product.price;
                     return total + price * item.quantity;
-                }, 0);
-            },
+                }, 0),
 
             getTotal: () => {
                 const subtotal = get().getSubtotal();

@@ -10,7 +10,6 @@ import CardHeader from '@mui/material/CardHeader';
 import ListItemText from '@mui/material/ListItemText';
 
 import { fToNow } from '../../utils/format-time';
-
 import { Iconify } from '../../components/iconify';
 import { Scrollbar } from '../../components/scrollbar';
 

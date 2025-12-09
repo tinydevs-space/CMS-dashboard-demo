@@ -1,24 +1,23 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
+import Container from '@mui/material/Container';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import InputLabel from '@mui/material/InputLabel';
-import Stack from '@mui/material/Stack';
+import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import CircularProgress from '@mui/material/CircularProgress';
 
-import { useSearchParams } from 'react-router-dom';
-
-import { ProductCategory, ProductStatus } from '../../../types/product';
-import { useProducts } from '../../../hooks/use-products';
-import { Iconify } from '../../../components/iconify';
 import { ProductCard } from './product-card';
+import { Iconify } from '../../../components/iconify';
+import { useProducts } from '../../../hooks/use-products';
+import { ProductStatus, ProductCategory } from '../../../types/product';
 
 // ----------------------------------------------------------------------
 

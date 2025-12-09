@@ -6,12 +6,10 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 
-import { RouterLink } from '../../routes/components';
-
-import { Logo } from '../../components/logo';
-
 import { AuthContent } from './content';
+import { Logo } from '../../components/logo';
 import { MainSection } from '../core/main-section';
+import { RouterLink } from '../../routes/components';
 import { LayoutSection } from '../core/layout-section';
 import { HeaderSection } from '../core/header-section';
 
@@ -120,10 +118,10 @@ export function AuthLayout({
        *************************************** */
       cssVars={{ '--layout-auth-content-width': '420px', ...cssVars }}
       sx={[
-        (theme) => ({
+        {
           position: 'relative',
           '&::before': backgroundStyles(),
-        }),
+        },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
     >
@@ -144,5 +142,5 @@ const backgroundStyles = (): CSSObject => ({
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center center',
-  backgroundImage: 'url(/assets/background/overlay.jpg)',
+  backgroundImage: `url(${import.meta.env.BASE_URL}assets/background/overlay.jpg)`,
 });

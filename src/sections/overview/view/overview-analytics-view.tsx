@@ -1,11 +1,10 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import { DashboardContent } from '../../../layouts/dashboard';
-import { _posts, _tasks, _traffic, _timeline } from '../../../_mock';
-
 import { AnalyticsNews } from '../analytics-news';
 import { AnalyticsTasks } from '../analytics-tasks';
+import { DashboardContent } from '../../../layouts/dashboard';
+import { _posts, _tasks, _traffic, _timeline } from '../../../_mock';
 import { AnalyticsCurrentVisits } from '../analytics-current-visits';
 import { AnalyticsOrderTimeline } from '../analytics-order-timeline';
 import { AnalyticsWebsiteVisits } from '../analytics-website-visits';
@@ -29,7 +28,7 @@ export function OverviewAnalyticsView() {
             title="Weekly sales"
             percent={2.6}
             total={714000}
-            icon={<img alt="Weekly sales" src="/assets/icons/glass/ic-glass-bag.svg" />}
+            icon={<img alt="Weekly sales" src={`${import.meta.env.BASE_URL}assets/icons/glass/ic-glass-bag.svg`} />}
             chart={{
               categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
               series: [22, 8, 35, 50, 82, 84, 77, 12],
@@ -43,7 +42,7 @@ export function OverviewAnalyticsView() {
             percent={-0.1}
             total={1352831}
             color="secondary"
-            icon={<img alt="New users" src="/assets/icons/glass/ic-glass-users.svg" />}
+            icon={<img alt="New users" src={`${import.meta.env.BASE_URL}assets/icons/glass/ic-glass-users.svg`} />}
             chart={{
               categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
               series: [56, 47, 40, 62, 73, 30, 23, 54],
@@ -57,7 +56,7 @@ export function OverviewAnalyticsView() {
             percent={2.8}
             total={1723315}
             color="warning"
-            icon={<img alt="Purchase orders" src="/assets/icons/glass/ic-glass-buy.svg" />}
+            icon={<img alt="Purchase orders" src={`${import.meta.env.BASE_URL}assets/icons/glass/ic-glass-buy.svg`} />}
             chart={{
               categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
               series: [40, 70, 50, 28, 70, 75, 7, 64],
@@ -71,7 +70,7 @@ export function OverviewAnalyticsView() {
             percent={3.6}
             total={234}
             color="error"
-            icon={<img alt="Messages" src="/assets/icons/glass/ic-glass-message.svg" />}
+            icon={<img alt="Messages" src={`${import.meta.env.BASE_URL}assets/icons/glass/ic-glass-message.svg`} />}
             chart={{
               categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
               series: [56, 30, 23, 54, 47, 40, 62, 73],

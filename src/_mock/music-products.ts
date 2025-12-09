@@ -1,11 +1,10 @@
-import type { Product, CartItem, Order } from '../types/product';
-import { ProductCategory, ProductStatus, GuitarType, BassType, ApparelType, AccessoryType } from '../types/product';
+import { BassType, GuitarType, ApparelType, ProductStatus, AccessoryType, ProductCategory } from '../types/product';
+
+import type { Product } from '../types/product';
 
 // ----------------------------------------------------------------------
 
-const PRODUCT_IMAGES = {
-    placeholder: '/assets/images/product/product-placeholder.webp',
-};
+
 
 // ----------------------------------------------------------------------
 // GUITARS
@@ -20,8 +19,8 @@ const guitars: Product[] = [
         salePrice: 749.99,
         category: ProductCategory.GUITARS,
         subCategory: GuitarType.ELECTRIC,
-        images: ['/assets/images/product/product-1.webp'],
-        coverImage: '/assets/images/product/product-1.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-1.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-1.webp`,
         stock: 12,
         status: [ProductStatus.IN_STOCK, ProductStatus.SALE],
         colors: ['#000000', '#e11d48', '#8b5cf6'],
@@ -42,8 +41,8 @@ const guitars: Product[] = [
         price: 1299.99,
         category: ProductCategory.GUITARS,
         subCategory: GuitarType.ELECTRIC,
-        images: ['/assets/images/product/product-2.webp'],
-        coverImage: '/assets/images/product/product-2.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-2.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-2.webp`,
         stock: 8,
         status: [ProductStatus.IN_STOCK, ProductStatus.FEATURED],
         colors: ['#000000', '#f59e0b', '#7c3aed'],
@@ -64,8 +63,8 @@ const guitars: Product[] = [
         price: 599.99,
         category: ProductCategory.GUITARS,
         subCategory: GuitarType.ACOUSTIC,
-        images: ['/assets/images/product/product-3.webp'],
-        coverImage: '/assets/images/product/product-3.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-3.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-3.webp`,
         stock: 15,
         status: [ProductStatus.IN_STOCK],
         specifications: {
@@ -85,8 +84,8 @@ const guitars: Product[] = [
         salePrice: 699.99,
         category: ProductCategory.GUITARS,
         subCategory: GuitarType.ELECTRIC,
-        images: ['/assets/images/product/product-4.webp'],
-        coverImage: '/assets/images/product/product-4.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-4.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-4.webp`,
         stock: 10,
         status: [ProductStatus.IN_STOCK, ProductStatus.SALE],
         colors: ['#10b981', '#f59e0b', '#ffffff'],
@@ -114,8 +113,8 @@ const basses: Product[] = [
         price: 749.99,
         category: ProductCategory.BASSES,
         subCategory: BassType.ELECTRIC,
-        images: ['/assets/images/product/product-5.webp'],
-        coverImage: '/assets/images/product/product-5.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-5.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-5.webp`,
         stock: 7,
         status: [ProductStatus.IN_STOCK],
         colors: ['#000000', '#e11d48', '#4f46e5'],
@@ -137,8 +136,8 @@ const basses: Product[] = [
         salePrice: 799.99,
         category: ProductCategory.BASSES,
         subCategory: BassType.ELECTRIC,
-        images: ['/assets/images/product/product-6.webp'],
-        coverImage: '/assets/images/product/product-6.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-6.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-6.webp`,
         stock: 5,
         status: [ProductStatus.IN_STOCK, ProductStatus.SALE, ProductStatus.FEATURED],
         colors: ['#8b5cf6', '#10b981', '#ffffff'],
@@ -166,8 +165,8 @@ const apparel: Product[] = [
         price: 29.99,
         category: ProductCategory.APPAREL,
         subCategory: ApparelType.TSHIRT,
-        images: ['/assets/images/product/product-7.webp'],
-        coverImage: '/assets/images/product/product-7.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-7.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-7.webp`,
         stock: 50,
         status: [ProductStatus.IN_STOCK],
         colors: ['#000000', '#ffffff', '#e11d48'],
@@ -188,8 +187,8 @@ const apparel: Product[] = [
         salePrice: 49.99,
         category: ProductCategory.APPAREL,
         subCategory: ApparelType.HOODIE,
-        images: ['/assets/images/product/product-8.webp'],
-        coverImage: '/assets/images/product/product-8.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-8.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-8.webp`,
         stock: 30,
         status: [ProductStatus.IN_STOCK, ProductStatus.SALE],
         colors: ['#000000', '#8b5cf6', '#4f46e5'],
@@ -209,8 +208,8 @@ const apparel: Product[] = [
         price: 24.99,
         category: ProductCategory.APPAREL,
         subCategory: ApparelType.HAT,
-        images: ['/assets/images/product/product-9.webp'],
-        coverImage: '/assets/images/product/product-9.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-9.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-9.webp`,
         stock: 40,
         status: [ProductStatus.IN_STOCK, ProductStatus.NEW],
         colors: ['#000000', '#e11d48', '#10b981'],
@@ -236,8 +235,8 @@ const accessories: Product[] = [
         price: 9.99,
         category: ProductCategory.ACCESSORIES,
         subCategory: AccessoryType.PICKS,
-        images: ['/assets/images/product/product-10.webp'],
-        coverImage: '/assets/images/product/product-10.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-10.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-10.webp`,
         stock: 100,
         status: [ProductStatus.IN_STOCK],
         specifications: {
@@ -255,8 +254,8 @@ const accessories: Product[] = [
         price: 39.99,
         category: ProductCategory.ACCESSORIES,
         subCategory: AccessoryType.STRAPS,
-        images: ['/assets/images/product/product-11.webp'],
-        coverImage: '/assets/images/product/product-11.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-11.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-11.webp`,
         stock: 25,
         status: [ProductStatus.IN_STOCK, ProductStatus.FEATURED],
         colors: ['#000000', '#8b4513', '#e11d48'],
@@ -275,8 +274,8 @@ const accessories: Product[] = [
         price: 29.99,
         category: ProductCategory.ACCESSORIES,
         subCategory: AccessoryType.CABLES,
-        images: ['/assets/images/product/product-12.webp'],
-        coverImage: '/assets/images/product/product-12.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-12.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-12.webp`,
         stock: 35,
         status: [ProductStatus.IN_STOCK],
         specifications: {
@@ -295,8 +294,8 @@ const accessories: Product[] = [
         salePrice: 129.99,
         category: ProductCategory.ACCESSORIES,
         subCategory: AccessoryType.CASES,
-        images: ['/assets/images/product/product-13.webp'],
-        coverImage: '/assets/images/product/product-13.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-13.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-13.webp`,
         stock: 12,
         status: [ProductStatus.IN_STOCK, ProductStatus.SALE],
         specifications: {
@@ -315,8 +314,8 @@ const accessories: Product[] = [
         price: 89.99,
         category: ProductCategory.ACCESSORIES,
         subCategory: AccessoryType.PEDALS,
-        images: ['/assets/images/product/product-14.webp'],
-        coverImage: '/assets/images/product/product-14.webp',
+        images: [`${import.meta.env.BASE_URL}assets/images/product/product-14.webp`],
+        coverImage: `${import.meta.env.BASE_URL}assets/images/product/product-14.webp`,
         stock: 18,
         status: [ProductStatus.IN_STOCK, ProductStatus.NEW],
         specifications: {

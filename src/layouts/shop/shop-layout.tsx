@@ -1,16 +1,16 @@
 import type { ReactNode } from 'react';
 
-import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Badge from '@mui/material/Badge';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-
 import { useNavigate } from 'react-router-dom';
+
+import Box from '@mui/material/Box';
+import Badge from '@mui/material/Badge';
+import Stack from '@mui/material/Stack';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Toolbar from '@mui/material/Toolbar';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 import { Iconify } from '../../components/iconify';
 import { useCartStore } from '../../store/cart-store';

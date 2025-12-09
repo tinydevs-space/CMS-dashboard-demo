@@ -1,18 +1,19 @@
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-
 import { useNavigate } from 'react-router-dom';
 
-import type { Product } from '../../../types/product';
-import { ProductStatus } from '../../../types/product';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import CardContent from '@mui/material/CardContent';
+
 import { Iconify } from '../../../components/iconify';
+import { ProductStatus } from '../../../types/product';
 import { useCartStore } from '../../../store/cart-store';
+
+import type { Product } from '../../../types/product';
 
 // ----------------------------------------------------------------------
 

@@ -10,16 +10,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 
 import { _users } from '../../../_mock';
-import { DashboardContent } from '../../../layouts/dashboard';
-
-import { Iconify } from '../../../components/iconify';
-import { Scrollbar } from '../../../components/scrollbar';
-
 import { TableNoData } from '../table-no-data';
 import { UserTableRow } from '../user-table-row';
 import { UserTableHead } from '../user-table-head';
 import { TableEmptyRows } from '../table-empty-rows';
+import { Iconify } from '../../../components/iconify';
 import { UserTableToolbar } from '../user-table-toolbar';
+import { Scrollbar } from '../../../components/scrollbar';
+import { DashboardContent } from '../../../layouts/dashboard';
 import { emptyRows, applyFilter, getComparator } from '../utils';
 
 import type { UserProps } from '../user-table-row';
@@ -175,7 +173,7 @@ export function useTable() {
     setPage(0);
   }, []);
 
-  const onChangePage = useCallback((event: unknown, newPage: number) => {
+  const onChangePage = useCallback((_event: unknown, newPage: number) => {
     setPage(newPage);
   }, []);
 

@@ -1,42 +1,30 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import Alert from '@mui/material/Alert';
 import Switch from '@mui/material/Switch';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import LoadingButton from '@mui/lab/LoadingButton';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import LoadingButton from '@mui/lab/LoadingButton';
 import FormControl from '@mui/material/FormControl';
-import Grid from '@mui/material/Grid';
-import Alert from '@mui/material/Alert';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
-import { DashboardContent } from '../../../layouts/dashboard';
 import { Iconify } from '../../../components/iconify';
 import { useProducts } from '../../../hooks/use-products';
-import { ProductCategory, ProductStatus } from '../../../types/product';
+import { DashboardContent } from '../../../layouts/dashboard';
+import { ProductStatus, ProductCategory } from '../../../types/product';
+
 import type { Product } from '../../../types/product';
 
 // ... (rest of the file)
 
-<Grid container spacing={3}>
-    <Grid item xs={12} md={8}>
-        <Card sx={{ p: 3 }}>
-            {/* ... */}
-        </Card>
-    </Grid>
-
-    <Grid item xs={12} md={4}>
-        <Card sx={{ p: 3 }}>
-            {/* ... */}
-        </Card>
-    </Grid>
-</Grid>
 
 // ----------------------------------------------------------------------
 

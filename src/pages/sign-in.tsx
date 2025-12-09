@@ -1,5 +1,4 @@
 import { CONFIG } from '../config-global';
-
 import { SignInView } from '../sections/auth';
 
 // ----------------------------------------------------------------------

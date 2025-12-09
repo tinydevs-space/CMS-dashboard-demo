@@ -5,16 +5,17 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
+import Popover from '@mui/material/Popover';
+import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Popover from '@mui/material/Popover';
 
-import { fCurrency } from '../../utils/format-number';
 import { Label } from '../../components/label';
 import { Iconify } from '../../components/iconify';
-import type { Product } from '../../types/product';
 import { ProductStatus } from '../../types/product';
+import { fCurrency } from '../../utils/format-number';
+
+import type { Product } from '../../types/product';
 
 // ----------------------------------------------------------------------
 

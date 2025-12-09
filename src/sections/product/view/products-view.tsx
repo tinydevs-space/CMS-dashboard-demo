@@ -7,13 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 
-import { DashboardContent } from '../../../layouts/dashboard';
-import { Iconify } from '../../../components/iconify';
-import { useProducts } from '../../../hooks/use-products';
-
 import { ProductItem } from '../product-item';
 import { ProductSort } from '../product-sort';
 import { ProductFilters } from '../product-filters';
+import { Iconify } from '../../../components/iconify';
+import { useProducts } from '../../../hooks/use-products';
+import { DashboardContent } from '../../../layouts/dashboard';
 
 import type { FiltersProps } from '../product-filters';
 

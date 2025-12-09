@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import type { Product } from '../types/product';
-import { ProductCategory, ProductStatus } from '../types/product';
+import { ProductStatus } from '../types/product';
 import { _musicProducts } from '../_mock/music-products';
 import { storage, STORAGE_KEYS } from '../utils/storage';
+
+import type { Product , ProductCategory} from '../types/product';
 
 // ----------------------------------------------------------------------
 

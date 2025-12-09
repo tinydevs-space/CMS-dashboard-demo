@@ -3,9 +3,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import { RouterLink } from '../../routes/components';
-
 import { Logo } from '../../components/logo';
+import { RouterLink } from '../../routes/components';
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +34,7 @@ export function NotFoundView() {
 
         <Box
           component="img"
-          src="/assets/illustrations/illustration-404.svg"
+          src={`${import.meta.env.BASE_URL}assets/illustrations/illustration-404.svg`}
           sx={{
             width: 320,
             height: 'auto',

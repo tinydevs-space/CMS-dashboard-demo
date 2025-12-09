@@ -3,7 +3,7 @@ import { SvgColor } from '../components/svg-color';
 
 // ----------------------------------------------------------------------
 
-const icon = (name: string) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} />;
+const icon = (name: string) => <SvgColor src={`${import.meta.env.BASE_URL}assets/icons/navbar/${name}.svg`} />;
 
 export type NavItem = {
   title: string;

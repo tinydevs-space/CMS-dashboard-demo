@@ -1,14 +1,12 @@
-import 'src/global.css';
+import './global.css';
 
 import { useEffect } from 'react';
 
 import Fab from '@mui/material/Fab';
 
 import { usePathname } from './routes/hooks';
-
-import { ThemeProvider } from './theme/theme-provider';
-
 import { Iconify } from './components/iconify';
+import { ThemeProvider } from './theme/theme-provider';
 
 // ----------------------------------------------------------------------
 

@@ -7,9 +7,8 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 
-import { fShortenNumber } from '../../utils/format-number';
-
 import { Iconify } from '../../components/iconify';
+import { fShortenNumber } from '../../utils/format-number';
 
 // ----------------------------------------------------------------------
 
