@@ -94,6 +94,11 @@ export const text = {
     secondary: grey[600],
     disabled: grey[500],
   }),
+  dark: createPaletteChannel({
+    primary: '#FFFFFF', // Pure white for max contrast
+    secondary: grey[500], // Light grey for secondary
+    disabled: grey[400], // Medium grey
+  }),
 };
 
 // Background color
@@ -102,6 +107,11 @@ export const background = {
     paper: '#FFFFFF',
     default: grey[100],
     neutral: grey[200],
+  }),
+  dark: createPaletteChannel({
+    paper: grey[200], // Dark grey for cards
+    default: grey[100], // Very dark grey for background
+    neutral: grey[200], // Neutral background
   }),
 };
 
@@ -119,6 +129,7 @@ export const baseAction = {
 // Action color
 export const action = {
   light: { ...baseAction, active: grey[600] },
+  dark: { ...baseAction, active: grey[500] },
 };
 
 // ----------------------------------------------------------------------
@@ -142,5 +153,11 @@ export const palette: Partial<Record<ThemeColorScheme, ColorSystemOptions['palet
     text: text.light,
     background: background.light,
     action: action.light,
+  },
+  dark: {
+    ...basePalette,
+    text: text.dark,
+    background: background.dark,
+    action: action.dark,
   },
 };

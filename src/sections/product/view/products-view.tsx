@@ -1,16 +1,18 @@
 import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Pagination from '@mui/material/Pagination';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
-import { _products } from 'src/_mock';
-import { DashboardContent } from 'src/layouts/dashboard';
+import { DashboardContent } from '../../../layouts/dashboard';
+import { Iconify } from '../../../components/iconify';
+import { useProducts } from '../../../hooks/use-products';
 
 import { ProductItem } from '../product-item';
 import { ProductSort } from '../product-sort';
-import { CartIcon } from '../product-cart-widget';
 import { ProductFilters } from '../product-filters';
 
 import type { FiltersProps } from '../product-filters';
@@ -25,7 +27,8 @@ const GENDER_OPTIONS = [
 
 const CATEGORY_OPTIONS = [
   { value: 'all', label: 'All' },
-  { value: 'shose', label: 'Shose' },
+  { value: 'guitars', label: 'Guitars' },
+  { value: 'basses', label: 'Basses' },
   { value: 'apparel', label: 'Apparel' },
   { value: 'accessories', label: 'Accessories' },
 ];
@@ -58,10 +61,11 @@ const defaultFilters = {
 };
 
 export function ProductsView() {
+  const navigate = useNavigate();
+  const { products, loading, deleteProduct } = useProducts();
+
   const [sortBy, setSortBy] = useState('featured');
-
   const [openFilter, setOpenFilter] = useState(false);
-
   const [filters, setFilters] = useState<FiltersProps>(defaultFilters);
 
   const handleOpenFilter = useCallback(() => {
@@ -80,17 +84,40 @@ export function ProductsView() {
     setFilters((prevValue) => ({ ...prevValue, ...updateState }));
   }, []);
 
+  const handleDeleteProduct = useCallback((id: string) => {
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      deleteProduct(id);
+    }
+  }, [deleteProduct]);
+
   const canReset = Object.keys(filters).some(
     (key) => filters[key as keyof FiltersProps] !== defaultFilters[key as keyof FiltersProps]
   );
 
+  if (loading) {
+    return (
+      <DashboardContent>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
+          <CircularProgress />
+        </Box>
+      </DashboardContent>
+    );
+  }
+
   return (
     <DashboardContent>
-      <CartIcon totalItems={8} />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 5 }}>
+        <Typography variant="h4">Products</Typography>
+        <Button
+          variant="contained"
+          color="inherit"
+          startIcon={<Iconify icon="eva:plus-fill" />}
+          onClick={() => navigate('/admin/products/new')}
+        >
+          New Product
+        </Button>
+      </Box>
 
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Products
-      </Typography>
       <Box
         sx={{
           mb: 5,
@@ -139,14 +166,12 @@ export function ProductsView() {
       </Box>
 
       <Grid container spacing={3}>
-        {_products.map((product) => (
+        {products.map((product) => (
           <Grid key={product.id} size={{ xs: 12, sm: 6, md: 3 }}>
-            <ProductItem product={product} />
+            <ProductItem product={product} onDelete={handleDeleteProduct} />
           </Grid>
         ))}
       </Grid>
-
-      <Pagination count={10} color="primary" sx={{ mt: 8, mx: 'auto' }} />
     </DashboardContent>
   );
 }

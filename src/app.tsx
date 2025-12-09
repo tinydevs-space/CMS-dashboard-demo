@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 
 import Fab from '@mui/material/Fab';
 
-import { usePathname } from 'src/routes/hooks';
+import { usePathname } from './routes/hooks';
 
-import { ThemeProvider } from 'src/theme/theme-provider';
+import { ThemeProvider } from './theme/theme-provider';
 
-import { Iconify } from 'src/components/iconify';
+import { Iconify } from './components/iconify';
 
 // ----------------------------------------------------------------------
 

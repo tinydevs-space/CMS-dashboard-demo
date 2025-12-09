@@ -7,17 +7,21 @@ import { varAlpha } from 'minimal-shared/utils';
 import Box from '@mui/material/Box';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 
-import { AuthLayout } from 'src/layouts/auth';
-import { DashboardLayout } from 'src/layouts/dashboard';
+import { AuthLayout } from '../layouts/auth';
+import { DashboardLayout } from '../layouts/dashboard';
 
 // ----------------------------------------------------------------------
 
-export const DashboardPage = lazy(() => import('src/pages/dashboard'));
-export const BlogPage = lazy(() => import('src/pages/blog'));
-export const UserPage = lazy(() => import('src/pages/user'));
-export const SignInPage = lazy(() => import('src/pages/sign-in'));
-export const ProductsPage = lazy(() => import('src/pages/products'));
-export const Page404 = lazy(() => import('src/pages/page-not-found'));
+// Customer-facing pages
+export const ShopPage = lazy(() => import('../pages/shop'));
+
+// Admin pages
+export const DashboardPage = lazy(() => import('../pages/dashboard'));
+export const UserPage = lazy(() => import('../pages/user'));
+export const SignInPage = lazy(() => import('../pages/sign-in'));
+export const ProductsPage = lazy(() => import('../pages/products'));
+export const ProductEditorPage = lazy(() => import('../pages/product-editor'));
+export const Page404 = lazy(() => import('../pages/page-not-found'));
 
 const renderFallback = () => (
   <Box
@@ -40,6 +44,7 @@ const renderFallback = () => (
 );
 
 export const routesSection: RouteObject[] = [
+  // Admin dashboard routes (back at root)
   {
     element: (
       <DashboardLayout>
@@ -52,8 +57,18 @@ export const routesSection: RouteObject[] = [
       { index: true, element: <DashboardPage /> },
       { path: 'user', element: <UserPage /> },
       { path: 'products', element: <ProductsPage /> },
-      { path: 'blog', element: <BlogPage /> },
+      { path: 'products/new', element: <ProductEditorPage /> },
+      { path: 'products/:id/edit', element: <ProductEditorPage /> },
     ],
+  },
+  // Customer-facing shop (at /shop)
+  {
+    path: 'shop',
+    element: (
+      <Suspense fallback={renderFallback()}>
+        <ShopPage />
+      </Suspense>
+    ),
   },
   {
     path: 'sign-in',
@@ -69,3 +84,4 @@ export const routesSection: RouteObject[] = [
   },
   { path: '*', element: <Page404 /> },
 ];
+

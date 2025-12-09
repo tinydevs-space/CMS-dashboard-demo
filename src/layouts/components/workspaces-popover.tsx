@@ -9,8 +9,8 @@ import MenuList from '@mui/material/MenuList';
 import ButtonBase from '@mui/material/ButtonBase';
 import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
 
-import { Label } from 'src/components/label';
-import { Iconify } from 'src/components/iconify';
+import { Label } from '../../components/label';
+import { Iconify } from '../../components/iconify';
 
 // ----------------------------------------------------------------------
 
